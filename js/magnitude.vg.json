@@ -2,8 +2,31 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "height": 500,
-    "title": "Number of Eruptions per Volcanic Eruption Index",
+    "title": "Number of Eruptions per Volcanic Explosivity Index",
     "data": {
-        "url": ""
-    }
+        "url": "https://raw.githubusercontent.com/olie0001/3179_homework4/main/data/volcano-events0-21.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "VEI",
+            "type": "nominal",
+            "title": "Volcanic Explosivity Index"
+        },
+        "y": {
+            "aggregate": "count",
+            "title": "Number of eruptions"
+        }
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Country",
+                "equal": "Indonesia"
+            }
+        },
+        {
+            "filter": "datum.VEI >= 0"
+        }
+    ]
 }

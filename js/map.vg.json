@@ -11,7 +11,7 @@
             "data": {
                 "url": "https://raw.githubusercontent.com/olie0001/3179_homework3/main/js/ne_110m_admin_0_countries.topojson",
                 "format": {
-                    "type": "topojson", 
+                    "type": "topojson",
                     "feature": "ne_110m_admin_0_countries"
                 }
             },
@@ -23,7 +23,7 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/olie0001/3179_homework3/main/data/volcano.csv"
+                "url": "https://raw.githubusercontent.com/olie0001/3179_assignment2/main/data/volcano-events0-21.csv"
             },
             "mark": {
                 "type": "circle",
@@ -33,33 +33,26 @@
             },
             "encoding": {
                 "longitude": {
-                    "field": "longitude",
+                    "field": "Longitude",
                     "type": "quantitative"
                 },
                 "latitude": {
-                    "field": "latitude",
+                    "field": "Latitude",
                     "type": "quantitative"
                 },
                 "color": {
-                    "field": "subregion",
+                    "field": "Type",
                     "type": "nominal",
-                    "title": "Subregion"
+                    "title": "Type"
                 }
             },
             "transform": [
                 {
-                    "filter": "datum.longitude > 93"
-                },
-                {
-                    "filter": "datum.longitude < 142"
-                },
-                {
-                    "filter": "datum.latitude > -10"
-                },
-                {
-                    "filter": "datum.latitude < 5"
+                    "filter": {
+                        "field": "Country",
+                        "equal": "Indonesia"
+                    }
                 }
-
             ]
         }
     ]
