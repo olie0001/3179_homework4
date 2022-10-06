@@ -1,0 +1,9 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 500,
+    "title": "Number of Eruptions per Volcanic Eruption Index",
+    "data": {
+        "url": ""
+    }
+}
