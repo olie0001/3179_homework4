@@ -26,7 +26,10 @@
             }
         },
         {
-            "filter": "datum.VEI >= 0"
+            "filter": {
+                "field": "VEI",
+                "range": [1,7]
+            }
         }
     ]
 }
