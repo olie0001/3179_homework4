@@ -6,6 +6,18 @@
     "data": {
         "url": "https://raw.githubusercontent.com/olie0001/3179_homework4/main/data/volcano-events0-21.csv"
     },
+    "params": [
+        {
+            "name": "Min_Elevation",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 1000,
+                "max": 3000,
+                "name": "Minimum Elevation: "
+            }
+        }
+    ],
     "mark": "bar",
     "encoding": {
         "x": {
@@ -16,7 +28,16 @@
         "y": {
             "aggregate": "count",
             "title": "Number of eruptions"
-        }
+        },
+        "tooltip": [
+            {
+                "aggregate": "average",
+                "field": "Total Deaths",
+                "title": "Average Deaths",
+                "type": "quantitative",
+                "format": ","
+            }
+        ]
     },
     "transform": [
         {
@@ -30,6 +51,9 @@
                 "field": "VEI",
                 "range": [1,7]
             }
+        },
+        {
+            "filter": "datum.Elevation > Min_Elevation"
         }
     ]
 }
